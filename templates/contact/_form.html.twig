@@ -1,16 +1,13 @@
-{{ form_start(form, {'action': path('contact'), 'method':'POST','attr': {'onsubmit':'checkForm()'}}) }}
+{{ form_start(form, {
+    'attr': {
+        'onsubmit':'checkForm()',
+        'novalidate': 'novalidate'
+    }}) }}
 
     <div class="control-group">
         <div class="form-group floating-label-form-group controls mb-0 pb-2">
 
                 {{ form_widget(form.civilit, {'attr': {'class': 'form-control'}}) }}
-
-{#            <select class="form-control" id="contact_civilit" name="contact[civilit]">#}
-{#                <option value="">Civilité</option>#}
-{#                <option value="0">Mme</option>#}
-{#                <option value="1">M</option>#}
-{#                <option value="-1">Non Binaire</option>#}
-{#            </select>#}
             <p class="help-block text-danger">{{ form_errors(form.civilit) }}</p>
         </div>
     </div>
